@@ -4,10 +4,10 @@ function gtag() {
 }
 gtag("js", new Date());
 
-gtag("config", "AW-11107979629");
+gtag("config", googleAccountConversionTagID);
 
 gtag("event", "conversion", {
-  send_to: "AW-11107979629/NQUxCOqnhoEZEO2i2bAp",
-  value: 1.0,
+  send_to: googleConversionTagEventSentTo,
+  value: googleConversionTagValue,
   currency: "USD",
 });
