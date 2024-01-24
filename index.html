@@ -1,809 +1,500 @@
 <!DOCTYPE html>
 <html lang="en">
 
-    <head>
-        <meta charset="UTF-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Subsidy Expiring Soon</title>
-        <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
-        <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
-        <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;900&;display=swap" rel="stylesheet">
-        <meta name="robots" content="noindex">
-        <script type="text/javascript" src="configs.js"></script>
-        <style>
-            body,
-            html {
-                min-height: 100%;
-                margin: 0;
-                background-color: #004b75;
-                font-family: "Roboto", sans-serif;
-                overflow-x: hidden;
-            }
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Subsidy Expiring Soon</title>
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;900&;display=swap" rel="stylesheet">
+    <meta name="robots" content="noindex">
+    <script type="text/javascript" src="configs.js"></script>
+    <link rel="stylesheet" href="/style.css">
+    <script>
+        let form_answers = {
+            earns_less_than_50k_per_year: "",
+            has_medicaid_or_medicare: "",
+            age_range: "",
+            angle: "subsidy",
+        };
+    </script>
+</head>
 
-            .form-wrapper {
-                background-color: white;
-                min-height: 63vh;
-                border-radius: 5px;
-                max-width: 100vw;
-                box-sizing: border-box;
-                /* Added this line */
-                padding-bottom: 10vh;
-            }
-
-            /* BUTTONS */
-            .button-positive {
-                background-color: #004b75;
-                color: white;
-                border-radius: 5px;
-                padding: 18px;
-                text-align: center;
-                font-weight: medium;
-                font-size: 29px;
-                cursor: pointer;
-            }
-
-            .button-positive:hover {
-                background-color: #003452;
-            }
-
-            /** Button positive large **/
-            .button-positive-large {
-                display: flex;
-                align-items: center;
-                width: 100%;
-                box-sizing: border-box;
-                padding: 40px 30px;
-                background-color: #004b75;
-                color: white;
-                border-radius: 5px;
-                cursor: pointer;
-                transition: background-color 0.3s;
-                cursor: pointer;
-            }
-
-            .button-positive-large:hover {
-                background-color: #003452;
-            }
-
-            .button-positive-large div:first-child {
-                font-size: 33px;
-                margin-right: 10px;
-            }
-
-            .button-positive-large div:last-child {
-                font-size: 30px;
-                font-weight: bold;
-                flex-grow: 1;
-                text-align: center;
-            }
-
-            /** Button positive call **/
-            .button-positive-call {
-                display: flex;
-                align-items: center;
-                width: 100%;
-                box-sizing: border-box;
-                padding: 23px 30px;
-                background-color: #004b75;
-                color: white;
-                border-radius: 5px;
-                cursor: pointer;
-                transition: background-color 0.3s;
-                cursor: pointer;
-            }
-
-            .button-positive-call:hover {
-                background-color: #003452;
-            }
-
-            .button-positive-call div:first-child {
-                font-size: 30px;
-                margin-right: 10px;
-            }
-
-            .button-positive-call div:last-child {
-                font-size: 23px;
-                font-weight: bold;
-                flex-grow: 1;
-                text-align: center;
-            }
-
-            /** Button negative **/
-            .button-negative {
-                display: flex;
-                align-items: center;
-                width: 100%;
-                box-sizing: border-box;
-                padding: 10px 30px;
-                background-color: #fff;
-                border: 2px solid #004b75;
-                color: #004b75;
-                border-radius: 5px;
-                cursor: pointer;
-                transition: background-color 0.3s;
-                cursor: pointer;
-            }
-
-            .button-negative:hover {
-                background-color: #003452;
-                color: white;
-            }
-
-            .button-negative div:first-child {
-                font-size: 33px;
-                margin-right: 10px;
-            }
-
-            .button-negative div:last-child {
-                font-size: 30px;
-                font-weight: bold;
-                flex-grow: 1;
-                text-align: center;
-            }
-
-            /** other styles **/
-            .min-full-height {
-                min-height: 89vh;
-            }
-
-            .content {
-                background-image: url("Images/bg.jpg");
-                background-size: cover;
-                background-repeat: no-repeat;
-                background-position: center;
-                text-align: center;
-                font-size: 20px;
-                max-width: 600px;
-                margin: 0 auto;
-            }
-
-            .title {
-                margin-bottom: 15px;
-                font-size: 30px;
-                font-weight: 900;
-                text-align: center;
-                color: white;
-                -webkit-text-stroke-width: 1.5px;
-                -webkit-text-stroke-color: black;
-                text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
-            }
-
-            .breaking-and-live {
-                display: flex;
-                justify-content: space-between;
-            }
-
-            .persistent-header {
-                padding: 20px 20px 0px;
-            }
-
-            .swiper-padding {
-                padding: 10px;
-            }
-
-            .swiper-slide {
-                display: flex;
-                align-items: center;
-                justify-content: center;
-            }
-
-            .slide-content {
-                width: calc(100% - 20px);
-                /* subtracting 20px padding from each side */
-                padding: 10px;
-                box-sizing: border-box;
-            }
-
-            .count {
-                font-size: 15px;
-                margin-bottom: 20px;
-                margin-top: 30px;
-            }
-
-            .question {
-                font-size: 26px;
-                font-weight: bold;
-                margin-top: 0px;
-                margin-bottom: 35px;
-                list-style: 28px;
-            }
-
-            .explainer {
-                font-size: 23px;
-            }
-
-            @keyframes throb {
-                0% {
-                    transform: scale(1);
-                }
-
-                50% {
-                    transform: scale(1.2);
-                }
-
-                100% {
-                    transform: scale(1);
-                }
-            }
-
-            .throbbing {
-                display: inline-block;
-                color: red;
-                animation: throb 1.5s infinite;
-            }
-
-            /** Desktop styling for slider **/
-            @media (min-width: 600px) {
-                .footer {
-                    padding-top: 100px;
-                }
-
-                .title {
-                    padding-bottom: 150px;
-                }
-
-                .swiper-container {
-                    height: 500px;
-                }
-
-                .swiper-slide {
-                    height: 100%;
-                }
-
-                .swiper-padding {
-                    padding: 0px;
-                }
-
-                .swiper-slide {
-                    visibility: hidden;
-                    display: flex;
-                    align-items: center;
-                    justify-content: center;
-                }
-
-                .swiper-slide-active {
-                    visibility: visible;
-                }
-
-                .slide-content {
-                    width: calc(100% - 30px);
-                    /* subtracting 20px padding from each side */
-                    padding: 15px;
-                    box-sizing: border-box;
-                }
-
-                .count {
-                    font-size: 20px;
-                    margin-bottom: 10px;
-                }
-
-                .question {
-                    font-size: 40px;
-                    font-weight: bold;
-                    margin-bottom: 10px;
-                }
-
-                .explainer {
-                    font-size: 30px;
-                }
-            }
-        </style>
-        <script>
-            let form_answers = {
-                earns_less_than_50k_per_year: "",
-                has_medicaid_or_medicare: "",
-                age_range: "",
-                angle: "subsidy",
-            };
-        </script>
-    </head>
-
-    <body cz-shortcut-listen="true">
-        <!-- Min 100vh -->
-        <div class="min-full-height content">
-            <div class="persistent-header">
-                <div class="breaking-and-live">
-                    <div>
-                        <img style="height: 36px" src="Images/breaking-news.png" alt="Breaking news">
-                    </div>
-                    <div>
-                        <img style="height: 18px" src="Images/live.gif" alt="Live">
-                    </div>
+<body cz-shortcut-listen="true">
+    <!-- Min 100vh -->
+    <div class="min-full-height content">
+        <div class="persistent-header">
+            <div class="breaking-and-live">
+                <div>
+                    <img style="height: 36px" src="Images/breaking-news.png" alt="Breaking news">
                 </div>
-                <div class="title">
-                    Congress Announces $6,400 Subsidy Available To All Americans
+                <div>
+                    <img style="height: 18px" src="Images/live.gif" alt="Live">
                 </div>
             </div>
-            <!-- Form Area-->
-            <div class="form">
-                <div class="swiper-padding">
-                    <div class="swiper-container swiper-initialized swiper-horizontal swiper-backface-hidden">
-                        <div class="swiper-wrapper" id="swiper-wrapper-f1cf4ecb891c9f36" aria-live="polite">
-                            <!-- Page 1-->
-                            <div class="swiper-slide swiper-slide-active" role="group" aria-label="1 / 5"
-                                style="width: 557px;">
-                                <div class="form-wrapper slide-content" id="page-1">
-                                    <div class="question" style="margin-bottom: 10px">
-                                        Cover your medical expenses, rent, bills, and groceries
-                                        today. Claim what's rightfully yours.
-                                    </div>
-                                    <div style="margin-bottom: 16px">Click Below To Claim</div>
-                                    <div class="button-positive-large next-button" style="margin-bottom: 20px">
-                                        <div>Claim Now</div>
-                                    </div>
-                                    <div style="
-                                    position: absolute;
-                                    width: 65px;
-                                    right: 0;
-                                    margin-top: -86px;
-                                    margin-right: 26px;
-                                    " class="next-button">
-                                        <img style="width: 100%" src="Images/tap.gif">
-                                    </div>
-                                    <div>
-                                        <img src="Images/check-1400.jpg" style="width: 100%">
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- Page 2-->
-                            <div class="swiper-slide swiper-slide-next" role="group" aria-label="2 / 5"
-                                style="width: 557px;">
-                                <div class="form-wrapper slide-content" id="page-2">
-                                    <div class="count">1 of 3</div>
-                                    <div class="question">
-                                        Do you earn less than $50,000 per year?
-                                    </div>
-                                    <div class="button-positive-large next-button" style="margin-bottom: 20px"
-                                        onclick="form_answers.earns_less_than_50k_per_year = 'yes'">
-                                        <!-- Check Icon -->
-                                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
-                                            stroke-width="4.5" stroke="currentColor" class="w-6 h-6" width="33px"
-                                            height="33px">
-                                            <path stroke-linecap="round" stroke-linejoin="round"
-                                                d="M4.5 12.75l6 6 9-13.5">
-                                            </path>
-                                        </svg>
-                                        <!-- / Check Icon -->
-                                        <div>Yes</div>
-                                    </div>
-                                    <div style="
-                                    position: absolute;
-                                    width: 65px;
-                                    right: 0;
-                                    margin-top: -86px;
-                                    margin-right: 26px;
-                                    " class="next-button" onclick="form_answers.earns_less_than_50k_per_year = 'yes'">
-                                        <img style="width: 100%" src="Images/tap.gif">
-                                    </div>
-                                    <div class="button-negative next-button" style="margin-bottom: 20px"
-                                        onclick="form_answers.earns_less_than_50k_per_year = 'no'">
-                                        <!-- X Icon -->
-                                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
-                                            stroke-width="4.5" stroke="currentColor" class="w-6 h-6" width="33px"
-                                            height="33px">
-                                            <path stroke-linecap="round" stroke-linejoin="round"
-                                                d="M6 18L18 6M6 6l12 12">
-                                            </path>
-                                        </svg>
-                                        <!-- / X Icon -->
-                                        <div>No</div>
-                                    </div>
-                                    <div class="explainer">
-                                        You must earn less than $50,000 per year to qualify.
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- Page 3-->
-                            <div class="swiper-slide" role="group" aria-label="3 / 5" style="width: 557px;">
-                                <div class="form-wrapper slide-content" id="page-3">
-                                    <div class="count">2 of 3</div>
-                                    <div class="question">Are you on Medicare or Medicaid?</div>
-                                    <div class="button-positive-large next-button" style="margin-bottom: 20px"
-                                        onclick="form_answers.has_medicaid_or_medicare = 'no'">
-                                        <!-- Check Icon -->
-                                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
-                                            stroke-width="4.5" stroke="currentColor" class="w-6 h-6" width="33px"
-                                            height="33px">
-                                            <path stroke-linecap="round" stroke-linejoin="round"
-                                                d="M4.5 12.75l6 6 9-13.5">
-                                            </path>
-                                        </svg>
-                                        <!-- / Check Icon -->
-                                        <div>No</div>
-                                    </div>
-                                    <div style="
-                                    position: absolute;
-                                    width: 65px;
-                                    right: 0;
-                                    margin-top: -86px;
-                                    margin-right: 26px;
-                                    " class="next-button" onclick="form_answers.has_medicaid_or_medicare = 'no'">
-                                        <img style="width: 100%" src="Images/tap.gif">
-                                    </div>
-                                    <div class="button-negative next-button" style="margin-bottom: 20px"
-                                        onclick="form_answers.has_medicaid_or_medicare = 'yes'">
-                                        <!-- X Icon -->
-                                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
-                                            stroke-width="4.5" stroke="currentColor" class="w-6 h-6" width="33px"
-                                            height="33px">
-                                            <path stroke-linecap="round" stroke-linejoin="round"
-                                                d="M6 18L18 6M6 6l12 12">
-                                            </path>
-                                        </svg>
-                                        <!-- / X Icon -->
-                                        <div>Yes</div>
-                                    </div>
-                                    <div class="explainer">
-                                        To qualify, you must not be on Medicare or Medicaid.
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- Page 4-->
-                            <div class="swiper-slide" role="group" aria-label="4 / 5" style="width: 557px;">
-                                <div class="form-wrapper slide-content" id="page-4">
-                                    <div class="count">Last question!</div>
-                                    <div class="question" style="margin-bottom: 67px">
-                                        How old are you?
-                                    </div>
-                                    <div class="button-positive-large next-button" style="margin-bottom: 20px"
-                                        onclick="form_answers.age_range = '18-to-64'">
-                                        <!-- Check Icon -->
-                                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
-                                            stroke-width="4.5" stroke="currentColor" class="w-6 h-6" width="33px"
-                                            height="33px">
-                                            <path stroke-linecap="round" stroke-linejoin="round"
-                                                d="M4.5 12.75l6 6 9-13.5">
-                                            </path>
-                                        </svg>
-                                        <!-- / Check Icon -->
-                                        <div>18 to 64</div>
-                                    </div>
-                                    <div style="
-                                    position: absolute;
-                                    width: 65px;
-                                    right: 0;
-                                    margin-top: -86px;
-                                    margin-right: 26px;
-                                    " class="next-button" onclick="form_answers.age_range = '18-to-64'">
-                                        <img style="width: 100%" src="Images/tap.gif">
-                                    </div>
-                                    <div class="button-negative next-button" style="margin-bottom: 20px"
-                                        onclick="form_answers.age_range = 'over-65'">
-                                        <!-- X Icon -->
-                                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
-                                            stroke-width="4.5" stroke="currentColor" class="w-6 h-6" width="33px"
-                                            height="33px">
-                                            <path stroke-linecap="round" stroke-linejoin="round"
-                                                d="M6 18L18 6M6 6l12 12">
-                                            </path>
-                                        </svg>
-                                        <!-- / X Icon -->
-                                        <div>Over 65</div>
-                                    </div>
-                                    <div class="explainer">
-                                        You must be between 18 to 64 years old to qualify.
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- Page 5 (Last page)-->
-                            <div class="swiper-slide" role="group" aria-label="5 / 5" style="width: 557px;">
-                                <div class="form-wrapper slide-content" id="page-5">
-                                    <div style="width: 100%">
-                                        <img style="width: 100%" src="Images/congrats.png" alt="Congratulations!">
-                                    </div>
-                                    <div style="font-size: 22px; padding: 19px 4px">
-                                        You pre-qualify! Call immediately to claim your
-                                        <strong style="text-decoration: underline">$6,400</strong> Monthly
-                                        Subsidy &amp; <strong>$0</strong> Health Plan.
-                                    </div>
-                                    <!-- C2C Button-->
-                                    <a id="btnlnk" href="tel: +18339320043" style="text-decoration: none">
-                                        <div class="button-positive-call" style="margin-bottom: 20px">
-                                            <div>
-                                                <img style="width: 29px" src="Images/phone.png">
-                                            </div>
-                                            <div>Click to Call Now</div>
-                                        </div>
-                                    </a>
-                                    <a id="btnlnk1" href="tel: +18339320043" style="text-decoration: none">
-                                        <div style="
-                                        position: absolute;
-                                        width: 65px;
-                                        right: 0;
-                                        margin-top: -68px;
-                                        margin-right: 14px;
-                                        " class="next-button">
-                                            <img style="width: 100%" src="Images/tap.gif">
-                                        </div>
-                                    </a>
-                                    <div style="margin-bottom: 20px">
-                                        <a id="btnlnk2" href="tel: +18339320043" style="color: red">
-                                            Call Now </a>
-                                    </div>
-                                    <!-- congrats page footer content-->
-                                    <div style="font-size: 17px">
-                                        Live Wait Time:
-                                        <strong class="throbbing" style="color: green">0</strong>
-                                        minutes
-                                        <br><br>
-                                        Available Agents: <strong class="throbbing">4</strong>
-                                    </div>
-                                    <div style="width: 100%; margin-top: 20px">
-                                        <img style="width: 65%" src="Images/whitehouse.png">
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <span class="swiper-notification" aria-live="assertive" aria-atomic="true"></span>
-                    </div>
-                </div>
+            <div class="title">
+                Congress Announces $6,400 Subsidy Available To All Americans
             </div>
-            <!-- / Form Area -->
         </div>
-        <!-- / Min 100vh -->
-        <!-- Footer -->
-        <div style="margin-top: -2px">
-            <div style="max-width: 600px; background-color: #ff0000; margin: 0 auto">
-                <div style="padding: 0px; text-align: center">
-                    <div class="footer">
-                        <div style="width: 80%; font-size: x-small; margin: 0 auto;">
-                            <b>TERMS OF SERVICE:</b>
-                            <p>
-                                <span id="domainName"></span> is a referral source that provides
-                                information and access to a
-                                helpline to
-                                match
-                                consumers with companies that may provide certain insurance coverage to them.
-                                <span id="domainName"></span> does not
-                                act as an insurance broker and does not make decisions about insurance coverage that may
-                                be
-                                available to
-                                you.
-                                <span id="domainName"></span> doesn't promise a specific outcome or the results you may
-                                achieve
-                                by
-                                calling the
-                                helpline. The helpline is free to call but the services or programs that you pursue may
-                                have
-                                costs
-                                associated with them. Neither
-                                <span id="domainName"></span> nor any of the supplemental insurance
-                                plans
-                                to which you
-                                may be connected are endorsed by the U.S. Government or the federal Medicare program.
-                            </p>
-                            <br>
-                            <p>
-                                Our goal is to provide exceptional service. One of our agents may reach out to you to
-                                discuss your order,
-                                ask for feedback, and/or see if you need any assistance with your products, services, or
-                                plans, at the
-                                phone number you provided regardless of your do-not-call list status. You may opt-out of
-                                further contact
-                                at any time by simply telling our customer service team that you would no longer like to
-                                be
-                                contacted. In
-                                the event that our team is unable to reach you by phone, they may send you a text
-                                message
-                                letting you know
-                                that we called. Both our text messages and phone calls may be sent or connected
-                                utilizing
-                                automated
-                                software. Carrier charges may apply. You may opt-out of any future contact via text
-                                message
-                                by replying
-                                anytime with "STOP".
-                            </p>
+        <!-- Form Area-->
+        <div class="form">
+            <div class="swiper-padding">
+                <div class="swiper-container swiper-initialized swiper-horizontal swiper-backface-hidden">
+                    <div class="swiper-wrapper" id="swiper-wrapper-f1cf4ecb891c9f36" aria-live="polite">
+                        <!-- Page 1-->
+                        <div class="swiper-slide swiper-slide-active" role="group" aria-label="1 / 5"
+                            style="width: 557px;">
+                            <div class="form-wrapper slide-content" id="page-1">
+                                <div class="question" style="margin-bottom: 10px">
+                                    Cover your medical expenses, rent, bills, and groceries
+                                    today. Claim what's rightfully yours.
+                                </div>
+                                <div style="margin-bottom: 16px">Click Below To Claim</div>
+                                <div class="button-positive-large next-button" style="margin-bottom: 20px">
+                                    <div>Claim Now</div>
+                                </div>
+                                <div class="next-button button2">
+                                    <img style="width: 100%" src="Images/tap.gif">
+                                </div>
+                                <div>
+                                    <img src="Images/check-1400.jpg" style="width: 100%">
+                                </div>
+                            </div>
                         </div>
-                        <br>
-                        <br>
-                        <div>
-                            <a href="privacy.html" style="color: #470000">Privacy Policy</a>
-                            |
-                            <a href="tos.html" style="color: #470000">Terms of Service</a>
-                            |
-                            <a href="contact.html" style="color: #470000">Contact Us</a>
+                        <!-- Page 2-->
+                        <div class="swiper-slide swiper-slide-next" role="group" aria-label="2 / 5"
+                            style="width: 557px;">
+                            <div class="form-wrapper slide-content" id="page-2">
+                                <div class="count">1 of 3</div>
+                                <div class="question">
+                                    Do you earn less than $50,000 per year?
+                                </div>
+                                <div class="button-positive-large next-button" style="margin-bottom: 20px"
+                                    onclick="form_answers.earns_less_than_50k_per_year = 'yes'">
+                                    <!-- Check Icon -->
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                        stroke-width="4.5" stroke="currentColor" class="w-6 h-6" width="33px"
+                                        height="33px">
+                                        <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5">
+                                        </path>
+                                    </svg>
+                                    <!-- / Check Icon -->
+                                    <div>Yes</div>
+                                </div>
+                                <div class="next-button button2"
+                                    onclick="form_answers.earns_less_than_50k_per_year = 'yes'">
+                                    <img style="width: 100%" src="Images/tap.gif">
+                                </div>
+                                <div class="button-negative next-button" style="margin-bottom: 20px"
+                                    onclick="form_answers.earns_less_than_50k_per_year = 'no'">
+                                    <!-- X Icon -->
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                        stroke-width="4.5" stroke="currentColor" class="w-6 h-6" width="33px"
+                                        height="33px">
+                                        <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12">
+                                        </path>
+                                    </svg>
+                                    <!-- / X Icon -->
+                                    <div>No</div>
+                                </div>
+                                <div class="explainer">
+                                    You must earn less than $50,000 per year to qualify.
+                                </div>
+                            </div>
                         </div>
-                        <br>
-                        <a id="G2Element" style="color: white;"></a>
-                        <br>
-                        <br>
-                        <div>© 2023 All Rights Reserved.</div>
-                        <br>
+                        <!-- Page 3-->
+                        <div class="swiper-slide" role="group" aria-label="3 / 5" style="width: 557px;">
+                            <div class="form-wrapper slide-content" id="page-3">
+                                <div class="count">2 of 3</div>
+                                <div class="question">Are you on Medicare or Medicaid?</div>
+                                <div class="button-positive-large next-button" style="margin-bottom: 20px"
+                                    onclick="form_answers.has_medicaid_or_medicare = 'no'">
+                                    <!-- Check Icon -->
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                        stroke-width="4.5" stroke="currentColor" class="w-6 h-6" width="33px"
+                                        height="33px">
+                                        <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5">
+                                        </path>
+                                    </svg>
+                                    <!-- / Check Icon -->
+                                    <div>No</div>
+                                </div>
+                                <div class="next-button button2" onclick="form_answers.has_medicaid_or_medicare = 'no'">
+                                    <img style="width: 100%" src="Images/tap.gif">
+                                </div>
+                                <div class="button-negative next-button" style="margin-bottom: 20px"
+                                    onclick="form_answers.has_medicaid_or_medicare = 'yes'">
+                                    <!-- X Icon -->
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                        stroke-width="4.5" stroke="currentColor" class="w-6 h-6" width="33px"
+                                        height="33px">
+                                        <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12">
+                                        </path>
+                                    </svg>
+                                    <!-- / X Icon -->
+                                    <div>Yes</div>
+                                </div>
+                                <div class="explainer">
+                                    To qualify, you must not be on Medicare or Medicaid.
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Page 4-->
+                        <div class="swiper-slide" role="group" aria-label="4 / 5" style="width: 557px;">
+                            <div class="form-wrapper slide-content" id="page-4">
+                                <div class="count">Last question!</div>
+                                <div class="question" style="margin-bottom: 67px">
+                                    How old are you?
+                                </div>
+                                <div class="button-positive-large next-button" style="margin-bottom: 20px"
+                                    onclick="form_answers.age_range = '18-to-64'">
+                                    <!-- Check Icon -->
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                        stroke-width="4.5" stroke="currentColor" class="w-6 h-6" width="33px"
+                                        height="33px">
+                                        <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5">
+                                        </path>
+                                    </svg>
+                                    <!-- / Check Icon -->
+                                    <div>18 to 64</div>
+                                </div>
+                                <div class="next-button button2" onclick="form_answers.age_range = '18-to-64'">
+                                    <img style="width: 100%" src="Images/tap.gif">
+                                </div>
+                                <div class="button-negative next-button" style="margin-bottom: 20px"
+                                    onclick="form_answers.age_range = 'over-65'">
+                                    <!-- X Icon -->
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                        stroke-width="4.5" stroke="currentColor" class="w-6 h-6" width="33px"
+                                        height="33px">
+                                        <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12">
+                                        </path>
+                                    </svg>
+                                    <!-- / X Icon -->
+                                    <div>Over 65</div>
+                                </div>
+                                <div class="explainer">
+                                    You must be between 18 to 64 years old to qualify.
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Page 5 (Last page)-->
+                        <div class="swiper-slide" role="group" aria-label="5 / 5" style="width: 557px;">
+                            <div class="form-wrapper slide-content" id="page-5">
+                                <div style="width: 100%">
+                                    <img style="width: 100%" src="Images/congrats.png" alt="Congratulations!">
+                                </div>
+                                <div style="font-size: 22px; padding: 19px 4px">
+                                    You pre-qualify! Call immediately to claim your
+                                    <strong style="text-decoration: underline">$6,400</strong> Monthly
+                                    Subsidy &amp; <strong>$0</strong> Health Plan.
+                                </div>
+                                <!-- C2C Button-->
+                                <a id="btnlnk" href="tel: +18339320043" style="text-decoration: none">
+                                    <div class="button-positive-call" style="margin-bottom: 20px">
+                                        <div>
+                                            <img style="width: 29px" src="Images/phone.png">
+                                        </div>
+                                        <div>Click to Call Now</div>
+                                    </div>
+                                </a>
+                                <a id="btnlnk1" href="tel: +18339320043" style="text-decoration: none">
+                                    <div class="next-button button1">
+                                        <img style="width: 100%" src="Images/tap.gif">
+                                    </div>
+                                </a>
+                                <div style="margin-bottom: 20px">
+                                    <a id="btnlnk2" href="tel: +18339320043" style="color: red">
+                                        Call Now </a>
+                                </div>
+                                <!-- congrats page footer content-->
+                                <div style="font-size: 17px">
+                                    Live Wait Time:
+                                    <strong class="throbbing" style="color: green">0</strong>
+                                    minutes
+                                    <br><br>
+                                    Available Agents: <strong class="throbbing">4</strong>
+                                </div>
+                                <div style="width: 100%; margin-top: 20px">
+                                    <img style="width: 65%" src="Images/whitehouse.png">
+                                </div>
+                            </div>
+                        </div>
                     </div>
+                    <span class="swiper-notification" aria-live="assertive" aria-atomic="true"></span>
                 </div>
             </div>
         </div>
+        <!-- / Form Area -->
+    </div>
+    <!-- / Min 100vh -->
+    <!-- Footer -->
+    <div style="margin-top: -2px">
+        <div style="max-width: 600px; background-color: #ff0000; margin: 0 auto">
+            <div style="padding: 0px; text-align: center">
+                <div class="footer">
+                    <div style="width: 80%; font-size: x-small; margin: 0 auto;">
+                        <b>TERMS OF SERVICE:</b>
+                        <p>
+                            <span id="domainName"></span> is a referral source that provides
+                            information and access to a
+                            helpline to
+                            match
+                            consumers with companies that may provide certain insurance coverage to them.
+                            <span id="domainName"></span> does not
+                            act as an insurance broker and does not make decisions about insurance coverage that may
+                            be
+                            available to
+                            you.
+                            <span id="domainName"></span> doesn't promise a specific outcome or the results you may
+                            achieve
+                            by
+                            calling the
+                            helpline. The helpline is free to call but the services or programs that you pursue may
+                            have
+                            costs
+                            associated with them. Neither
+                            <span id="domainName"></span> nor any of the supplemental insurance
+                            plans
+                            to which you
+                            may be connected are endorsed by the U.S. Government or the federal Medicare program.
+                        </p>
+                        <br>
+                        <p>
+                            Our goal is to provide exceptional service. One of our agents may reach out to you to
+                            discuss your order,
+                            ask for feedback, and/or see if you need any assistance with your products, services, or
+                            plans, at the
+                            phone number you provided regardless of your do-not-call list status. You may opt-out of
+                            further contact
+                            at any time by simply telling our customer service team that you would no longer like to
+                            be
+                            contacted. In
+                            the event that our team is unable to reach you by phone, they may send you a text
+                            message
+                            letting you know
+                            that we called. Both our text messages and phone calls may be sent or connected
+                            utilizing
+                            automated
+                            software. Carrier charges may apply. You may opt-out of any future contact via text
+                            message
+                            by replying
+                            anytime with "STOP".
+                        </p>
+                    </div>
+                    <br>
+                    <br>
+                    <div>
+                        <a href="privacy.html" class="color1">Privacy Policy</a>
+                        |
+                        <a href="tos.html" class="color1">Terms of Service</a>
+                        |
+                        <a href="contact.html" class="color1">Contact Us</a>
+                    </div>
+                    <br>
+                    <a id="G2Element" class="color2"></a>
+                    <br>
+                    <br>
+                    <div>© 2023 All Rights Reserved.</div>
+                    <br>
+                </div>
+            </div>
+        </div>
+    </div>
 
-        <!-- / Footer-->
-        <script>
-            body();
-            document.addEventListener("DOMContentLoaded", function () {
-                var swiper = new Swiper(".swiper-container", {
-                    direction: "horizontal",
-                    loop: false,
-                    allowSlideNext: false,
-                    allowSlidePrev: false,
-                });
+    <!-- / Audio Call functions-->
+    <script>
+        body();
+        document.addEventListener("DOMContentLoaded", function () {
+            var swiper = new Swiper(".swiper-container", {
+                direction: "horizontal",
+                loop: false,
+                allowSlideNext: false,
+                allowSlidePrev: false,
+            });
 
-                function addNextButtonListener(pageSelector) {
-                    var buttons = document.querySelectorAll(
-                        pageSelector + " .next-button"
-                    );
-                    buttons.forEach(function (button) {
-                        button.addEventListener("click", function () {
-                            swiper.allowSlideNext = true;
-                            swiper.slideNext();
-                            swiper.allowSlideNext = false;
-                        });
-                    });
-                }
-
-                // Add event listeners for each page
-                addNextButtonListener("#page-1");
-                addNextButtonListener("#page-2");
-                addNextButtonListener("#page-3");
-                addNextButtonListener("#page-4");
-
-                // Helper function to stop all audios
-                function stopAllAudio() {
-                    audio1.pause();
-                    audio1.currentTime = 0;
-                    audio2.pause();
-                    audio2.currentTime = 0;
-                    audio3.pause();
-                    audio3.currentTime = 0;
-                    audio4.pause();
-                    audio4.currentTime = 0;
-                }
-
-                // Special behavior for page 1: play audio
-                var audio1 = new Audio("Audios/audio1.mp3");
-                var page1buttons = document.querySelectorAll("#page-1 .next-button");
-                page1buttons.forEach(function (button) {
+            function addNextButtonListener(pageSelector) {
+                var buttons = document.querySelectorAll(
+                    pageSelector + " .next-button"
+                );
+                buttons.forEach(function (button) {
                     button.addEventListener("click", function () {
-                        stopAllAudio();
-                        audio1.play();
+                        swiper.allowSlideNext = true;
+                        swiper.slideNext();
+                        swiper.allowSlideNext = false;
                     });
                 });
+            }
 
-                // Special behavior for page 2: play audio
-                var audio2 = new Audio("Audios/audio2.mp3");
-                var page2buttons = document.querySelectorAll("#page-2 .next-button");
-                page2buttons.forEach(function (button) {
-                    button.addEventListener("click", function () {
-                        stopAllAudio();
-                        audio2.play();
-                    });
-                });
+            // Add event listeners for each page
+            addNextButtonListener("#page-1");
+            addNextButtonListener("#page-2");
+            addNextButtonListener("#page-3");
+            addNextButtonListener("#page-4");
 
-                // Special behavior for page 3: play audio
-                var audio3 = new Audio("Audios/audio3.mp3");
-                var page3buttons = document.querySelectorAll("#page-3 .next-button");
-                page3buttons.forEach(function (button) {
-                    button.addEventListener("click", function () {
-                        stopAllAudio();
-                        audio3.play();
-                    });
-                });
+            // Helper function to stop all audios
+            function stopAllAudio() {
+                audio1.pause();
+                audio1.currentTime = 0;
+                audio2.pause();
+                audio2.currentTime = 0;
+                audio3.pause();
+                audio3.currentTime = 0;
+                audio4.pause();
+                audio4.currentTime = 0;
+            }
 
-                // Special behavior for page 4: play audio
-                var audio4 = new Audio("Audios/audio4.mp3");
-                var page4buttons = document.querySelectorAll("#page-4 .next-button");
-                page4buttons.forEach(function (button) {
-                    button.addEventListener("click", async function () {
-                        if (form_answers.has_medicaid_or_medicare == "no") {
-                            normalnumbers();
-                        }
-                        else {
-                            overflownumbers();
-                        }
-                        stopAllAudio();
-                        audio4.play();
-                    });
+            // Special behavior for page 1: play audio
+            var audio1 = new Audio("Audios/audio1.mp3");
+            var page1buttons = document.querySelectorAll("#page-1 .next-button");
+            page1buttons.forEach(function (button) {
+                button.addEventListener("click", function () {
+                    stopAllAudio();
+                    audio1.play();
                 });
             });
 
-            function normalnumbers() {
-                document.getElementById("btnlnk").href = `tel: ${qualifyNumber}`;
-                document.getElementById("btnlnk1").href = `tel: ${qualifyNumber}`;
-                document.getElementById("btnlnk2").href = `tel: ${qualifyNumber}`;
+            // Special behavior for page 2: play audio
+            var audio2 = new Audio("Audios/audio2.mp3");
+            var page2buttons = document.querySelectorAll("#page-2 .next-button");
+            page2buttons.forEach(function (button) {
+                button.addEventListener("click", function () {
+                    stopAllAudio();
+                    audio2.play();
+                });
+            });
 
-                var script = document.createElement("script");
-                script.src = "./scripts/g-tag.js";
-                script.type = "text/javascript";
-                script.async = false;
-                document.body.appendChild(script);
+            // Special behavior for page 3: play audio
+            var audio3 = new Audio("Audios/audio3.mp3");
+            var page3buttons = document.querySelectorAll("#page-3 .next-button");
+            page3buttons.forEach(function (button) {
+                button.addEventListener("click", function () {
+                    stopAllAudio();
+                    audio3.play();
+                });
+            });
 
-                if (addLeadId) {
-                    s = document.createElement("script");
-                    s.id = "LeadiDscript_campaign";
-                    s.type = "text/javascript";
-                    s.async = true;
-                    s.src =
-                        "https://create.lidstatic.com/campaign/a57816b4-6c59-f397-7853-7e14e45d3e1b.js?snippet_version=2&callback=addToQueryString";
-
-                    document.body.appendChild(s);
-                } else {
-                    script = document.createElement("script");
-                    script.src = `https://b-js.ringba.com/${normalRingbaCampaignID}`;
-                    script.async = true;
-                    document.body.appendChild(script);
-                }
-            }
-
-            function overflownumbers() {
-                document.getElementById("btnlnk").href = `tel: ${overflowNumber}`;
-                document.getElementById("btnlnk1").href = `tel: ${overflowNumber}`;
-                document.getElementById("btnlnk2").href = `tel: ${overflowNumber}`;
-
-                script = document.createElement("script");
-                script.src = `https://b-js.ringba.com/${overflowRingbaCampaignID}`;
-                script.async = true;
-                document.body.appendChild(script);
-            }
-
-            function body() {
-                var script = document.createElement("script");
-                script.src = `https://www.googletagmanager.com/gtag/js?id=${googleAccountConversionTagID}`;
-                script.type = "text/javascript";
-                script.async = true;
-                document.body.appendChild(script);
-
-                document.getElementById('domainName').innerHTML = domainName;
-
-                document.getElementById('G2Element').innerHTML = G2DisplayName;
-                document.getElementById('G2Element').href = G2Link;
-            }
-
-            function getQueryParams() {
-                var queryString = window.location.search.substring(1);
-                var params = {};
-                var pairs = queryString.split("&");
-
-                for (var i = 0; i < pairs.length; i++) {
-                    var pair = pairs[i].split("=");
-                    var key = decodeURIComponent(pair[0]);
-                    var value = decodeURIComponent(pair[1]);
-                    // Check if the key is "leadid"
-                    if (key === "leadid") {
-                        return value; // Return the value if the key matches
+            // Special behavior for page 4: play audio
+            var audio4 = new Audio("Audios/audio4.mp3");
+            var page4buttons = document.querySelectorAll("#page-4 .next-button");
+            page4buttons.forEach(function (button) {
+                button.addEventListener("click", async function () {
+                    if (form_answers.has_medicaid_or_medicare == "no") {
+                        normalnumbers();
                     }
-                    // Store all query parameters in the params object
-                    params[key] = value;
-                }
-                // If "leadid" key is not found, you can return null or perform any other action as needed.
-                return null;
-            }
+                    else {
+                        overflownumbers();
+                    }
+                    stopAllAudio();
+                    audio4.play();
+                });
+            });
+        });
 
-            function addToQueryString(value) {
-                if (getQueryParams("leadid") == null) {
-                    const currentQueryString = window.location.search;
-                    // Check if the current query string is empty or not
-                    const separator = currentQueryString ? "&" : "?";
-                    // Create the new query string with the "leadid" parameter and its value
-                    const newQueryString = `${currentQueryString}${separator}leadid=${encodeURIComponent(
-                        value
-                    )}`;
-                    // Get the current URL without the query string
-                    const urlWithoutQueryString =
-                        window.location.origin + window.location.pathname;
-                    // Create the final URL with the updated query string
-                    const finalUrl = urlWithoutQueryString + newQueryString;
-                    // Update the browser's address bar
-                    window.history.replaceState({}, document.title, finalUrl);
-                    // Insert Ringba or Retreaver Code here:
-                    var script = document.createElement("script");
-                    script.src = `//b-js.ringba.com/${normalRingbaCampaignID}`;
-                    script.async = true;
-                    document.head.appendChild(script);
-                }
-            }
+        function body() {
+            var script = document.createElement("script");
+            script.src = `https://www.googletagmanager.com/gtag/js?id=${googleAccountConversionTagID}`;
+            script.type = "text/javascript";
+            script.async = true;
+            document.body.appendChild(script);
 
-        </script>
-    </body>
+            document.getElementById('domainName').innerHTML = domainName;
+
+            document.getElementById('G2Element').innerHTML = G2DisplayName;
+            document.getElementById('G2Element').href = G2Link;
+        }
+    </script>
+    </script>
+    <!-- / Normal call functions-->
+    <script>
+        function normalnumbers() {
+            document.getElementById("btnlnk").href = `tel: ${qualifyNumber}`;
+            document.getElementById("btnlnk1").href = `tel: ${qualifyNumber}`;
+            document.getElementById("btnlnk2").href = `tel: ${qualifyNumber}`;
+
+            var script = document.createElement("script");
+            script.src = "./scripts/g-tag.js";
+            script.type = "text/javascript";
+            script.async = false;
+            document.body.appendChild(script);
+
+            if (addLeadId) {
+                s = document.createElement("script");
+                s.id = "LeadiDscript_campaign";
+                s.type = "text/javascript";
+                s.async = true;
+                s.src =
+                    "https://create.lidstatic.com/campaign/a57816b4-6c59-f397-7853-7e14e45d3e1b.js?snippet_version=2&callback=addToQueryString";
+
+                document.body.appendChild(s);
+            } else {
+                script = document.createElement("script");
+                script.src = `https://b-js.ringba.com/${normalRingbaCampaignID}`;
+                script.async = true;
+                document.body.appendChild(script);
+            }
+        }
+        function overflownumbers() {
+            document.getElementById("btnlnk").href = `tel: ${overflowNumber}`;
+            document.getElementById("btnlnk1").href = `tel: ${overflowNumber}`;
+            document.getElementById("btnlnk2").href = `tel: ${overflowNumber}`;
+
+            script = document.createElement("script");
+            script.src = `https://b-js.ringba.com/${overflowRingbaCampaignID}`;
+            script.async = true;
+            document.body.appendChild(script);
+        }
+    </script>
+    <!-- / lead Id function-->
+    <script>
+        function getQueryParams() {
+            var queryString = window.location.search.substring(1);
+            var params = {};
+            var pairs = queryString.split("&");
+
+            for (var i = 0; i < pairs.length; i++) {
+                var pair = pairs[i].split("=");
+                var key = decodeURIComponent(pair[0]);
+                var value = decodeURIComponent(pair[1]);
+                // Check if the key is "leadid"
+                if (key === "leadid") {
+                    return value; // Return the value if the key matches
+                }
+                // Store all query parameters in the params object
+                params[key] = value;
+            }
+            // If "leadid" key is not found, you can return null or perform any other action as needed.
+            return null;
+        }
+        function addToQueryString(value) {
+            if (getQueryParams("leadid") == null) {
+                const currentQueryString = window.location.search;
+                // Check if the current query string is empty or not
+                const separator = currentQueryString ? "&" : "?";
+                // Create the new query string with the "leadid" parameter and its value
+                const newQueryString = `${currentQueryString}${separator}leadid=${encodeURIComponent(
+                    value
+                )}`;
+                // Get the current URL without the query string
+                const urlWithoutQueryString =
+                    window.location.origin + window.location.pathname;
+                // Create the final URL with the updated query string
+                const finalUrl = urlWithoutQueryString + newQueryString;
+                // Update the browser's address bar
+                window.history.replaceState({}, document.title, finalUrl);
+                // Insert Ringba or Retreaver Code here:
+                var script = document.createElement("script");
+                script.src = `//b-js.ringba.com/${normalRingbaCampaignID}`;
+                script.async = true;
+                document.head.appendChild(script);
+            }
+        }
+
+    </script>
+</body>
 
 </html>
