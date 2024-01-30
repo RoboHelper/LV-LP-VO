@@ -1,6 +1,6 @@
 const domainName = "americanledfreedom.com";
 
-const G2DisplayName = "Cameron Webster Lenhoff- G2 Certification";
+const G2DisplayName = "Cameron Webster Lenhoff - G2 Certification";
 const G2Link =
   "https://www.g2llc.com/approved-health-insurance-provider/?pdb=2200";
 
