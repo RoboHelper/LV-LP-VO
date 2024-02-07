@@ -1,8 +1,8 @@
-const domainName = "allamericanassistance.com";
+const domainName = "ushelpcentre.com";
 
-const G2DisplayName = "Reclaim Insurance Agency";
+const G2DisplayName = "Pioneer Health Associates LLC";
 const G2Link =
-  "https://www.g2llc.com/approved-health-insurance-provider/?pdb=1237";
+  "https://www.g2llc.com/approved-health-insurance-provider/?pdb=1439";
 
 const addLeadId = true;
 
