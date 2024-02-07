@@ -1,8 +1,8 @@
 const domainName = "ushelpcentre.com";
 
-const G2DisplayName = "Pioneer Health Associates LLC";
+const G2DisplayName = "Portland Benefits Group LLC";
 const G2Link =
-  "https://www.g2llc.com/approved-health-insurance-provider/?pdb=1439";
+  "https://www.g2llc.com/approved-health-insurance-provider/?pdb=1241";
 
 const addLeadId = true;
 
